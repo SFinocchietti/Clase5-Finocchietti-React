@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import Item from "./Item"
+
 
 
 const productosIniciales = [
@@ -22,14 +24,16 @@ const ItemList = () => {
     const [productos,setProductos] = useState([])
 
     useEffect(()=>{
-
-      const promesa = new Promise ((res)=>{
-        res(productosDeBaseDeDatos)
+        const promesa = new Promise ((res)=>{    
+          setTimeout(() =>{
+            res(productosIniciales)
+          },2000)
+        
       }
       )
 
       .then((contenido)=>{
-        console.log("Salio todo bien")
+        setProductos(contenido)
       }
       )
       .catch((error)=>{
@@ -37,19 +41,13 @@ const ItemList = () => {
       })
 
         console.log("Pido productos")
-
-        setTimeout(()=>{
-            console.log("Recibo productos")
-            console.log(productosIniciales)  
-            setProductos(productosIniciales)
-        },2000)       
     },[])  
 return(
     <>
     <ul>
      {productos.map((producto) => {
         console.log(producto)
-         return <li key={producto.id}>{producto.nombre}</li>
+         return <Item key={producto.id} producto={producto}></Item>
      })}
     </ul>
     </>

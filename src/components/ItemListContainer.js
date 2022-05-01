@@ -1,19 +1,15 @@
-import Item from "./Item"
+import ItemList from "./ItemList"
 
-
-
-
-const Greeting = (props) => {
+const ItemListContainer = (props) => {
   return (
     <>
     <main>
-      {props.children}
-      <Item/>
-    
+      {props.children}     
+    <ItemList/>
       </main>
       </>
   )
   
 }
 
-export default Greeting
+export default ItemListContainer

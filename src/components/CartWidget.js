@@ -1,7 +1,7 @@
 const Icono = () => {
     return (
         <nav>
-        <span class="material-icons">
+        <span className="material-icons">
         local_atm
         </span> 
         </nav>

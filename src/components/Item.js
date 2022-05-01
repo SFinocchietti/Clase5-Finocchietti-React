@@ -1,10 +1,8 @@
 const Item = (props) => {
     return (
-      <main>
-      <p>Recomendaciones de acciones</p>
-      <button>VER</button>
-        {props.children}
-        </main>
+      <article>
+        {props.producto.name}
+      </article>
     )
   }
 
